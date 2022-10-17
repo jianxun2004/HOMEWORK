@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <tittle>华氏度换摄氏度计算器</tittle>
+    </head>
+    <body>
+    <script>
+        var Fahrenheit = window.prompt("请输入华氏度","")
+        var celsius = (Fahrenheit - 32)*5/9
+        while(Number(celsius)!==Fahrenheit){
+            window.alert(celsius+"C");
+            Fahrenheit = window.prompt("请输入华氏度","");
+            celsius = (Fahrenheit - 32)*5/9
+        }
+    </script>
+    </body>
+</html>
