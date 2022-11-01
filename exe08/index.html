@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <style>
+            table, th, td {
+                border:1px solid black;
+                background-color:#a5b1a5;
+                width:800px;
+            }
+        </style>
+        <title>乘法表</title>
+    </head>
+    <body>
+        <div id="msg"></div>
+        <script>
+            var xfb ="<table>"
+            for(var i = 1; i < 10; i++) {
+                xfb += "<tr>";
+                for(var j = 1; j < 10; j ++) {
+                    xfb +="<td>";
+                    xfb += j + " x " + i + " = " + i*j; // 通过+= ， 把整个乘法表存进这个变数
+                    xfb += "</td>";
+                }
+                xfb += "</tr>"
+            }
+            xfb +="</table>"
+            console.log(xfb)
+            document.getElementById("msg").innerHTML = xfb;  
+        </script>
+    </body>
+</html>
