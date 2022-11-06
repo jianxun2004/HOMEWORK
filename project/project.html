@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<meta charset="UTF-8">
+<html>
+    <head>
+        <style>
+            body{
+                background-color: bisque;
+            }
+            table, th, td {
+                border:1px solid black;
+                background-color:white;
+                width: auto;
+                height: auto;
+            }
+            .title {
+                top: 50%;
+                left: 50%;
+                position: absolute;
+                transform: translate(-50%, -50%);
+                font-family: "Arial", sans-serif;
+                font-size: 5vmin;
+                top: 90%;
+                font-weight: bold;
+              }
+        </style>
+    </head>
+    <body>
+        <!-- <h1>解二元方程</h1>
+        <p> aX^2 + bX + C </p>
+        <div>
+            <input type="text" id="fun1"  placeholder="输入a">
+            <input type="text" id="fun2"  placeholder="输入b">
+            <input type="text" id="fun3"  placeholder="输入c">
+            <input type="button" onclick="jfc()" value="确认">
+        </div><br>
+        <p id="jfcs"></p>
+        <script>
+            function jfc(){
+                var a = document.getElementById("fun1").value;
+                var b = document.getElementById("fun2").value;
+                var c = document.getElementById("fun3").value;
+                // calculate discriminant
+                var root1;
+                var root2;
+                var discriminant = b * b - 4 * a * c;
+                // condition for real and different roots
+                if (discriminant > 0) {
+                    root1 = (-b + Math.sqrt(discriminant)) / (2 * a);
+                    root2 = (-b-Math.sqrt(discriminant)) / (2 * a);
+                    // result
+                    eyjfcs = ("二元方程的根是 " + root1 + " 和 " + root2);
+                    console.log(eyjfcs);
+                }
+                // condition for real and equal roots
+                else if (discriminant == 0) {
+                    root1 = root2 =-b / (2 * a);
+                    // result
+                    eyjfcs = ("二元方程的根是 " + root1 + " 和 " + root2);
+                    console.log(eyjfcs);
+                }
+                // if roots are not real
+                else {
+                    var realPart = (-b / (2 * a)).toFixed(2);
+                    var imagPart = (Math.sqrt(-discriminant) / (2 * a)).toFixed(2);
+                    // result
+                    eyjfcs = ("二元方程的根是 " + realPart+imagPart + " 和 " + realPart-imagPart);
+                    console.log(eyjfcs);
+                }
+                document.getElementById("jfcs").innerHTML = eyjfcs; 
+            }
+        </script> 
+        <br><hr>-->
+        <button onclick="jump()">网页跳转</button><br><hr>
+        <h1>闰年计算器</h1>
+        <div>
+            <input type="text" id="yearNumber"  placeholder="输入测试年份">
+            <input type="button" onclick="yeartest()" value="确认">
+        </div><br>
+        <div id="runnian"></div>
+        <script>
+            var clicknum = 0;
+            function yeartest(){
+                // 2.1 获取文本框内容
+                var yearNumber = document.getElementById("yearNumber").value;
+                if ((yearNumber%400 == 0) || ((yearNumber%100 != 0) && (yearNumber%4 == 0))){
+                    yearNumber += " 是闰年";
+                }
+                else{
+                    yearNumber += " 不是闰年";
+                }
+                document.getElementById("runnian").innerHTML= yearNumber;
+            }
+            //   /* 弹出内容 */
+            //     alert("文本为: " + text);
+        </script>
+        <br><hr>
+        <h1>乘法表计算器</h1>
+        <p style="font: size 1px;">X x Y 乘法表</p>
+        <div>
+            <input type="text" id="num1"  placeholder="输入x">
+            <input type="text" id="num2"  placeholder="输入y">
+            <input type="button" onclick="xfb()" value="确认">
+        </div><br>
+        <div id="msg"></div>
+        <script>
+            function xfb(){
+                var inputNum1 = document.getElementById("num1").value;
+                var inputNum2 = document.getElementById("num2").value;
+                var xfb ="<table>"
+                for(var i = 1; i <= inputNum1; i++) {
+                    xfb += "<tr>";
+                for(var j = 1; j <= inputNum2; j ++) {
+                    xfb +="<td>";
+                    xfb += " "+ i + " x " + j + " = " + i*j + " "; // 通过+= ， 把整个乘法表存进这个变数
+                    xfb += "</td>";
+                }
+                    xfb += "</tr>"
+                }
+                xfb +="</table>"
+                console.log(xfb)
+                document.getElementById("msg").innerHTML = xfb; 
+            }
+        </script><hr><br>
+        <script>
+            function jump(){
+                window.location.href = "/project/blackping-blog-card-slider/index.html"
+            }
+        </script>
+    </body>
+</html>
+
