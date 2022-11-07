@@ -6,7 +6,7 @@
             body{
                 background-color: bisque;
             }
-            table, th, td {
+            th, td {
                 background-color:white;
                 width: auto;
                 height: auto;
@@ -104,6 +104,7 @@
             <input type="button" onclick="xfb()" value="确认">
         </div><br>
         <div id="msg"></div>
+        <div id="msg2"></div>
         <script>
             function xfb(){
                 var inputNum1 = document.getElementById("num1").value;
@@ -119,8 +120,10 @@
                     xfb += "</tr>"
                 }
                 xfb +="</table>"
+                var abc = i + "x" + j + "乘法表";
                 console.log(xfb)
                 document.getElementById("msg").innerHTML = xfb; 
+                document.getElementById("msg2").innerHTML = abc;
             }
         </script><hr><br>
         <script>
