@@ -6,13 +6,18 @@
             body{
                 background-color: bisque;
             }
-            th, td {
+            td {
                 background-color:white;
                 width: auto;
                 height: auto;
                 border-radius: 25px;
-                border: 2px solid #73AD21;
                 padding: 15px;
+                text-align: center;
+                color: #7d31af;
+                background-image: linear-gradient(#e7e189, #bc91e5);
+            }
+            .textcenter{
+                text-align: center;
             }
             .title {
                 top: 50%;
@@ -25,6 +30,7 @@
                 font-weight: bold;
               }
         </style>
+        <link rel="icon" type="image/x-icon" href="https://upload.wikimedia.org/wikipedia/commons/3/3a/Cat03.jpg">
     </head>
     <body>
         <!-- <h1>解二元方程</h1>
@@ -97,33 +103,34 @@
         </script>
         <br><hr>
         <h1>乘法表计算器</h1>
-        <h2 style="font: size 1px;">X x Y 乘法表</h2>
+        <p style="font: size 1px;">X x Y 乘法表</p>
         <div>
             <input type="text" id="num1"  placeholder="输入x">
             <input type="text" id="num2"  placeholder="输入y">
             <input type="button" onclick="xfb()" value="确认">
-        </div><br>
-        <div id="msg2"></div>
-        <div id="msg"></div>
+        </div>
+        <!-- <h3 id="msg2" style="text-align: center;"></h3> -->
+        <div id="msg" class="textcenter"></div>
         <script>
             function xfb(){
                 var inputNum1 = document.getElementById("num1").value;
                 var inputNum2 = document.getElementById("num2").value;
                 var xfb ="<table>"
+                    xfb += "<tr>" + "<th>" + "<h3>" + inputNum1 + "x" + inputNum2 + "乘法表" + "</h3>" + "</th>" + "</tr>";
                 for(var i = 1; i <= inputNum1; i++) {
                     xfb += "<tr>";
-                for(var j = 1; j <= inputNum2; j ++) {
-                    xfb +="<td>";
-                    xfb += " "+ i + " x " + j + " = " + i*j + " "; // 通过+= ， 把整个乘法表存进这个变数
-                    xfb += "</td>";
-                }
+                    for(var j = 1; j <= inputNum2; j ++) {
+                        xfb +="<td>";
+                        xfb += " "+ i + " x " + j + " = " + i*j + " "; // 通过+= ， 把整个乘法表存进这个变数
+                        xfb += "</td>";
+                    }
                     xfb += "</tr>"
                 }
                 xfb +="</table>"
-                console.log(xfb)
-                var abc = inputNum1 + "x" + inputNum2 + "乘法表";
+                //console.log(xfb)
+                //var abc = inputNum1 + "x" + inputNum2 + "乘法表";
                 document.getElementById("msg").innerHTML = xfb; 
-                document.getElementById("msg2").innerHTML = abc;
+                //document.getElementById("msg2").innerHTML = abc;
             }
         </script><hr><br>
         <script>
@@ -133,4 +140,3 @@
         </script>
     </body>
 </html>
-
