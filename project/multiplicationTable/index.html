@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<meta charset="UTF-8">
+<html>
+    <head>
+        <style>
+            body{
+                background-color: bisque;
+                text-align: center;
+            }
+            table{
+                margin: 0 auto;
+            }
+            td {
+                background-color:white;
+                width: auto;
+                height: auto;
+                border-radius: 25px;
+                padding: 15px;
+                text-align: center;
+                color: #7d31af;
+                background-image: linear-gradient(#e7e189, #bc91e5);
+            }
+            .textcenter{
+                text-align: center;
+            }
+            .title {
+                top: 50%;
+                left: 50%;
+                position: absolute;
+                transform: translate(-50%, -50%);
+                font-family: "Arial", sans-serif;
+                font-size: 5vmin;
+                top: 90%;
+                font-weight: bold;
+              }
+        </style>
+    </head>
+<body>
+        <h1>乘法表计算器</h1>
+        <p style="font: size 1px;">X x Y 乘法表</p>
+        <div>
+            <input type="text" id="num1"  placeholder="输入x">
+            <input type="text" id="num2"  placeholder="输入y">
+            <input type="button" onclick="xfb()" value="确认">
+        </div>
+        <!-- <h3 id="msg2" style="text-align: center;"></h3> -->
+        <h3 id="msg2" style="text-align: center;"></h3>
+        <div id="msg" class="textcenter"></div>
+        <script>
+            function xfb(){
+                var inputNum1 = document.getElementById("num1").value;
+                var inputNum2 = document.getElementById("num2").value;
+                var xfb ="<table>"
+                for(var i = 1; i <= inputNum1; i++) {
+                    xfb += "<tr>";
+                    for(var j = 1; j <= inputNum2; j ++) {
+                        xfb +="<td>";
+                        xfb += " "+ i + " x " + j + " = " + i*j + " "; // 通过+= ， 把整个乘法表存进这个变数
+                        xfb += "</td>";
+                    }
+                    xfb += "</tr>"
+                }
+                xfb +="</table>"
+                console.log(xfb)
+                var abc = inputNum1 + "x" + inputNum2 + "乘法表";
+                document.getElementById("msg").innerHTML = xfb; 
+                document.getElementById("msg2").innerHTML = abc;
+            }
+        </script><hr><br>
+        <script>
+            function jump(){
+                window.location.href = "/HOMEWORK/project/blackping-blog-card-slider/index.html"
+            }
+        </script>
+    </body>
+</html>
+

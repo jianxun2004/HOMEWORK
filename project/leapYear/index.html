@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            body{
+                background-color: rgb(240, 200, 159);
+                text-align: center;
+            }
+            .title {
+                top: 50%;
+                left: 50%;
+                position: absolute;
+                transform: translate(-50%, -50%);
+                font-family: "Arial", sans-serif;
+                font-size: 5vmin;
+                top: 90%;
+                font-weight: bold;
+              }
+        </style>
+    </head>
+    <body>
+            <h1>闰年计算器</h1>
+            <div>
+                <input type="text" id="yearNumber"  placeholder="输入测试年份">
+                <input type="button" onclick="yeartest()" value="确认">
+            </div><br>
+            <div id="runnian" style="font-size: 30px;color:rgb(0, 0, 0);"></div>
+            <script>
+                var clicknum = 0;
+                function yeartest(){
+                    // 2.1 获取文本框内容
+                    var yearNumber = document.getElementById("yearNumber").value;
+                    if ((yearNumber%400 == 0) || ((yearNumber%100 != 0) && (yearNumber%4 == 0))){
+                        yearNumber += " 是闰年";
+                    }
+                    else{
+                        yearNumber += " 不是闰年";
+                    }
+                    document.getElementById("runnian").innerHTML= yearNumber;
+                }
+                //   /* 弹出内容 */
+                //     alert("文本为: " + text);
+            </script>         
+    </body>
+</html>
